@@ -93,7 +93,7 @@ app.get('/pagecount', function (req, res) {
 
 // insert user records
 // TODO - remove hardcoded data
-app.get('/addUser', , function (req, res){
+app.get('/addUser', function (req, res){
   if (!db) {
     initDb(function(err){});
   }
