@@ -99,7 +99,7 @@ app.get('/addUser', function (req, res){
   }
   var collection = db.collection('users');
   collection.insert({u_name:"Anthony"});
-  res.send('Anthony added to db.');
+  res.send('Anthony added to db.'+mongoURL);
 });
 
 // error handling
