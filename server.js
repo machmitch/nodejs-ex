@@ -92,14 +92,13 @@ app.get('/pagecount', function (req, res) {
 });
 
 // insert user records
-// TODO - remove hardcoded data
 app.get('/addUser', function (req, res){
   if (!db) {
     initDb(function(err){});
   }
   var collection = db.collection('users');
   collection.insert({u_name:"Anthony"});
-  res.send('Anthony added to db.'+mongoURL);
+  res.send('Anthony added to db.');
 });
 
 // error handling
