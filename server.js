@@ -40,7 +40,7 @@ var db = null,
 var initDb = function(callback) {
   if (mongoURL == null) return;
 
-  var mongodb = require('mongodb');
+  var mongodb = require('mongodb').MongoClient;
   if (mongodb == null) return;
 
   mongodb.connect(mongoURL, function(err, conn) {
@@ -89,6 +89,16 @@ app.get('/pagecount', function (req, res) {
   } else {
     res.send('{ pageCount: -1 }');
   }
+});
+
+// insert user records
+app.get('/addUser', , function (req, res){
+  if (!db) {
+    initDb(function(err){});
+  }
+  var collection = db.collection('users');
+  collection.insert({u_name:"Anthony"});
+  res.send('Anthony added to db.');
 });
 
 // error handling
