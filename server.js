@@ -93,6 +93,7 @@ app.get('/pagecount', function (req, res) {
 
 // insert user records
 app.post('/api', function (req, res){
+  console.log(req);
   var name = req.body.name;
   // if (!db) {
   //   initDb(function(err){});
