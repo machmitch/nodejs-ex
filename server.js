@@ -92,7 +92,7 @@ app.get('/pagecount', function (req, res) {
 });
 
 // insert user records
-app.post('/api', function (req, res){
+app.get('/api', function (req, res){
   var clientIp = req.body.IP;
   // if (!db) {
   //   initDb(function(err){});
