@@ -93,7 +93,7 @@ app.get('/pagecount', function (req, res) {
 
 // insert user records
 app.post('/api', function (req, res){
-  var reqBody = req.body;
+  var reqBody = req;
   // if (!db) {
   //   initDb(function(err){});
   // }
