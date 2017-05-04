@@ -92,7 +92,7 @@ app.get('/pagecount', function (req, res) {
 });
 
 // insert user records
-app.get('/api', function (req, res){
+app.post('/api', function (req, res){
   var reqBody = req.body;
   // if (!db) {
   //   initDb(function(err){});
@@ -105,7 +105,7 @@ app.get('/api', function (req, res){
 // error handling
 app.use(function(err, req, res, next){
   console.error(err.stack);
-  res.status(500).send('Something bad happened!');
+  res.status(500).send('Something bad happened!\n' + err.stack);
 });
 
 initDb(function(err){
