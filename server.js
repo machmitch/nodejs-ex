@@ -93,13 +93,13 @@ app.get('/pagecount', function (req, res) {
 
 // insert user records
 app.post('/api', function (req, res){
-  var reqBody = req;
+  var name = req.body.name;
   // if (!db) {
   //   initDb(function(err){});
   // }
   // var collection = db.collection('users');
   // collection.insert({u_name:"Test"});
-  res.send('Your request body is ' + reqBody);
+  res.send('Your name is ' + name);
 });
 
 // error handling
