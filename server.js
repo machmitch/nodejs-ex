@@ -93,13 +93,13 @@ app.get('/pagecount', function (req, res) {
 
 // insert user records
 app.get('/api', function (req, res){
-  var clientIp = req.body.IP;
+  var reqBody = req.body;
   // if (!db) {
   //   initDb(function(err){});
   // }
   // var collection = db.collection('users');
   // collection.insert({u_name:"Test"});
-  res.send('Your IP is ' + clientIp);
+  res.send('Your request body is ' + reqBody);
 });
 
 // error handling
