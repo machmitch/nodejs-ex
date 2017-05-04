@@ -92,13 +92,14 @@ app.get('/pagecount', function (req, res) {
 });
 
 // insert user records
-app.get('/addUser', function (req, res){
-  if (!db) {
-    initDb(function(err){});
-  }
-  var collection = db.collection('users');
-  collection.insert({u_name:"Anthony"});
-  res.send('Anthony added to db.');
+app.post('/api', function (req, res){
+  var clientIp = req.body.IP;
+  // if (!db) {
+  //   initDb(function(err){});
+  // }
+  // var collection = db.collection('users');
+  // collection.insert({u_name:"Test"});
+  res.send('Your IP is ' + clientIp);
 });
 
 // error handling
